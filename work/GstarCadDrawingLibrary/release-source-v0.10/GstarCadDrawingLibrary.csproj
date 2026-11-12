@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{E86AA0E9-880A-4A30-829D-4F1D354F9050}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GstarCadDrawingLibrary</RootNamespace>
+    <AssemblyName>GstarCadDrawingLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <GstarCadInstallDir Condition=" '$(GstarCadInstallDir)' == '' ">D:\工作软件\浩辰CAD 2024</GstarCadInstallDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>5</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>5</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="GcCoreMgd">
+      <HintPath>$(GstarCadInstallDir)\GcCoreMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GcDbMgd">
+      <HintPath>$(GstarCadInstallDir)\GcDbMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GcMgd">
+      <HintPath>$(GstarCadInstallDir)\GcMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BlockEditingCommands.cs" />
+    <Compile Include="CadToolsControl.cs" />
+    <Compile Include="CadUtilityCommands.cs" />
+    <Compile Include="DrawingItem.cs" />
+    <Compile Include="DrawingLibraryCommands.cs" />
+    <Compile Include="DrawingLibraryControl.cs" />
+    <Compile Include="DrawingLibraryService.cs" />
+    <Compile Include="DwgThumbnailProvider.cs" />
+    <Compile Include="ExcelImportCommands.cs" />
+    <Compile Include="ExcelWorkbookReader.cs" />
+    <Compile Include="ExcelWorksheetSelectionDialog.cs" />
+    <Compile Include="DwgInsertService.cs" />
+    <Compile Include="CategorySelectionDialog.cs" />
+    <Compile Include="InsertDrawingEventArgs.cs" />
+    <Compile Include="LibrarySettings.cs" />
+    <Compile Include="PluginEntry.cs" />
+    <Compile Include="PromptDialog.cs" />
+    <Compile Include="TextAndStatisticsCommands.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="ValidateGstarCadReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(GstarCadInstallDir)\GcCoreMgd.dll')" Text="找不到浩辰 CAD 托管接口。请通过 /p:GstarCadInstallDir=安装目录 指定浩辰 CAD 2024 路径。" />
+  </Target>
+</Project>

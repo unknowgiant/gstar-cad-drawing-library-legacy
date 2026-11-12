@@ -1,0 +1,5 @@
+C:\Users\unkno\Documents\Codex\2026-08-14\new-chat\work\GstarCadDrawingLibrary\obj\x64\Release\GstarCadDrawingLibrary.csprojResolveAssemblyReference.cache
+C:\Users\unkno\Documents\Codex\2026-08-14\new-chat\work\GstarCadDrawingLibrary\bin\Release\GstarCadDrawingLibrary.dll
+C:\Users\unkno\Documents\Codex\2026-08-14\new-chat\work\GstarCadDrawingLibrary\bin\Release\GstarCadDrawingLibrary.pdb
+C:\Users\unkno\Documents\Codex\2026-08-14\new-chat\work\GstarCadDrawingLibrary\obj\x64\Release\GstarCadDrawingLibrary.dll
+C:\Users\unkno\Documents\Codex\2026-08-14\new-chat\work\GstarCadDrawingLibrary\obj\x64\Release\GstarCadDrawingLibrary.pdb
